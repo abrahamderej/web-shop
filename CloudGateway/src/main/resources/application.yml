@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: customerModule
+          uri: http://localhost:8901/
+          predicates:
+            - Path=/customers/**
+        - id: productModule
+          uri: http://localhost:8902/, http://localhost:8903/, http://localhost:8904/
+          predicates:
+            - Path=/products/**
+        - id: shoppingCartCommandModule
+          uri: http://localhost:8905/
+          predicates:
+            - Path=/shoppingcarts/**
+        - id: ShoppingCartQueryModule
+          uri: http://localhost:8906/
+          predicates:
+            - Path=/qshoppingcarts/**
+        - id: orderModule
+          uri: http://localhost:8907/
+          predicates:
+            - Path=/orders/**
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+        add-to-simple-url-handler-mapping: true
+server:
+  port: 8080
+
+
+

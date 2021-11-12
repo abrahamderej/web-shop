@@ -1,0 +1,12 @@
+so Where do i Start 1
+1. Class Diagram
+2. Communication between Service(Fiegn, Api gateway, Registry)
+3. Creating Replicas(Multiple Instance)
+4. Load Balancer for Client
+5. Perfomance (in the Case of using Event Sourcing + CQRS)
+6. Logging and Tracing (Zipkin , ELK ...with testing)
+7. Keep configuration in sync-- config server(Git)
+8 . Resilience (Registry replicas, Load balancing between multiple service instances, Circuit breaker)
+
+Optional ...
+Transaction

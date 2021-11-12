@@ -1,0 +1,23 @@
+server:
+  port: 8907
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/, http://localhost:8762/eureka/
+
+spring:
+  application:
+    name: OrderService
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: orderdb
+  zipkin:
+    base-url: http://localhost:9411/
+
+    sleuth:
+      sampler:
+        probability: 1 #100% (default = 10%)
